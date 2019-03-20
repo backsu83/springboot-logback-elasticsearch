@@ -9,5 +9,5 @@
 * 검색엔진 크롬 플러그인 - https://chrome.google.com/webstore/search/elasticsearch-head
 
 ### 설명
-* 검색엔진에 CRUD 기능
+* Rest API로 검색엔진 데이터 CRUD 기능
 * 검색엔진은 Docker로 구성
