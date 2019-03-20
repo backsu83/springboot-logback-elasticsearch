@@ -1,4 +1,4 @@
-package com.example.elasticlog.demo;
+package com.example.elasticsearch.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

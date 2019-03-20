@@ -1,4 +1,4 @@
-package com.example.elasticlog.demo.intercepter;
+package com.example.elasticsearch.demo.intercepter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
@@ -16,7 +16,8 @@ public class LoggerIntercepter implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        log.info("==== intercepter start ==== " + createUUid());
+        generateUUid();
+        log.info("==== intercepter start ==== ");
         return true;
     }
 
@@ -30,7 +31,7 @@ public class LoggerIntercepter implements HandlerInterceptor {
         MDC.clear();
     }
 
-    public String createUUid() {
+    public String generateUUid() {
         MDC.put("trackingId",UUID.randomUUID().toString());
         return UUID.randomUUID().toString();
     }

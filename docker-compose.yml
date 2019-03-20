@@ -1,0 +1,67 @@
+version: '2.2'
+services:
+  elasticsearch:
+    image: 01e5bee1e059
+    container_name: elasticsearch
+    environment:
+      - cluster.name=docker-cluster
+      - node.name=es01
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=elasticsearch"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9200:9200
+
+  elasticsearch2:
+    image: 01e5bee1e059
+    container_name: elasticsearch2
+    environment:
+      - cluster.name=docker-cluster
+      - node.name=es02
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=elasticsearch"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  elasticsearch3:
+    image: 01e5bee1e059
+    container_name: elasticsearch3
+    environment:
+      - cluster.name=docker-cluster
+      - node.name=es03
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "discovery.zen.ping.unicast.hosts=elasticsearch"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+#  kibana:
+#    image: 92815bd544b7
+#    container_name: kibana
+#    environment:
+#      SERVER_NAME: kibana.local
+#      ELASTICSEARCH_URL: http://elasticsearch:9200
+#    ports:
+#      - '5601:5601'
+

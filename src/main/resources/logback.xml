@@ -7,7 +7,7 @@
         <url>http://localhost:9200/_bulk</url> <!-- 적재하려는 ES 주소 -->
         <index>logs-%date{yyyy-MM-dd}</index>
         <type>log</type>
-        <loggerName>com.example.elasticlog</loggerName>
+        <loggerName>com.example.elasticsearch</loggerName>
         <includeMdc>true</includeMdc>
         <!--<properties>-->
             <!--<property>-->
@@ -31,7 +31,7 @@
                 <!--<name>logger</name>-->
                 <!--<value>%logger</value>-->
             <!--</property>-->
-        <!--</properties>properties-->
+        <!--</properties>-->
         <headers>
             <header>
                 <name>Content-Type</name>
@@ -46,7 +46,7 @@
         </layout>
     </appender>
 
-    <logger name="com.example.elasticlog" level="info" additivity="false">
+    <logger name="com.example.elasticsearch" level="info" additivity="false">
         <appender-ref ref="ELASTIC" />
         <appender-ref ref="STDOUT" />
     </logger>
