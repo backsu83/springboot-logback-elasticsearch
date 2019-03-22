@@ -8,7 +8,7 @@
 
 
 ### 목적
-* Rest API로 검색엔진 데이터 CRUD 기능
+* Springboot에서 구현된 Rest API로 검색엔진 데이터 CRUD 기능
 * Logback에서 Info Level 로그는 검색엔진으로 전송
 
 ### 설치방법
